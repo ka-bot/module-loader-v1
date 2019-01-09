@@ -82,7 +82,6 @@ function loadModule(path)
 		}
 		throw e;
 	}
-	return ret;
 }
 
 function response(room, msg, sender, isGroupChat, replier, imageDB)
