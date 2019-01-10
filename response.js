@@ -17,7 +17,7 @@ function loadModule(path)
 	try
 	{
 		let e = "Invalid v1g module or I/O exception occurred";
-		var zf = java.lang.Class.forName("java.util.ZipFile").getConstructor([java.lang.String]).newInstance([path]);
+		var zf = new java.util.zip.ZipFile(path);
 		var module_json = getEntry("module.json");
 		if(module_json == null || module_json.isDirectory())
 		{
