@@ -24,7 +24,7 @@ function loadModule(path)
 			throw e;
 		}
 		var zis = zf.getInputStream(module_json);
-		var module = JSON.stringify(readAll(zis));
+		var module = JSON.parse(readAll(zis));
 		zis.close();
 		zis = undefined;
 		if(typeof module.name !== "v1g")
