@@ -27,7 +27,7 @@ function loadModule(path)
 		var module = JSON.parse(readAll(zis));
 		zis.close();
 		zis = undefined;
-		if(typeof module.name !== "v1g")
+		if(typeof module.type != "v1g")
 		{
 			throw e;
 		}
