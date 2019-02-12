@@ -27,7 +27,7 @@ function loadModule(path)
 		var module = JSON.parse(readAll(zis));
 		zis.close();
 		zis = undefined;
-		if(typeof module.type != "v1g")
+		if(module.type !== "v1g")
 		{
 			throw e;
 		}
@@ -52,7 +52,7 @@ function loadModule(path)
 			throw e;
 		}
 		var script = zf.getEntry(module.filename);
-		var func = new Function("shared", readAll(zis = script.getInputStream()));
+		var func = new Function("shared", readAll(zis = zf.getInputStream(script)));
 		zis.close();
 		zis = undefined;
 		if(func = func(shared))
